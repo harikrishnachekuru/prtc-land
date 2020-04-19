@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/tech-vie-fevicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH-VIE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" 
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" 
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <style>
+
+    html{
+      scroll-behavior: smooth;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Muli', sans-serif;
+        box-sizing: border-box;
+    }
+    .nav_style{
+        /* background-color: #007bff !important; */
+        background-color: rgb(52, 127, 214)!important;
+    }
+    .nav_style a{
+        color: white;
+    }
+    .nav-item a:active{
+      color: white;
+    }
+
+    .main-header{
+        height: 700px;
+        width: 100%;
+        position: relative;
+        color: white;
+        background-color: #04044c !important;
+        padding: 10% 10% 20% 5%;
+        align-items: center;
+    }
+    .sub-section{
+        background-color: #fafdfa;
+    }
+    .section-header h1{
+      color: #6610f2;
+    }
+    .sub-section_1{
+        background-color: linen;
+    }
+
+ /* ////////////////////////////////////////// offer ///////////////////////// */
+
+    .offers{
+        width: 100%;
+        height: 110vh;
+        padding: 50px;
+        position: relative;
+    }
+    .offers:before{
+        content: "";
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background: linear-gradient(160deg, #16c9f6 55%, #fff 0%);
+    }
+    .card{
+        transition: 0.4s ease;
+    }
+    .card-header{
+        font-size: 1.6rem;
+        font-weight: bold;
+        background: #fff !important;
+        padding: 25px 9 !important;
+    }
+    .card-body{
+        padding: 30px 0px !important;
+    }
+    .card-body li{
+        margin: 10px 0;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #606060;
+        list-style: none;
+    }
+    .card-footer{
+        background: white !important;
+        padding: 30px 0px !important;
+    }
+    .card-footer a{
+        border: 1px solid #50d1c0;
+        border-radius: 100px;
+        margin: 0 5px;
+        padding: 12px 35px;
+        outline: none;
+        color: #50d1c0;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4;
+        text-align: center;
+    }
+    .card-footer a:hover{
+        color: #fff;
+        background: #50d1c0;
+        text-decoration: none;
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    }
+    .card:hover{
+        transform: translateY(-20px);
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    }
+    .card:hover .card-header{
+        color: #50d1c0;
+
+    }
+    .form-button button{
+      border: 1px solid #50d1c0;
+      border-radius: 100px;
+      margin: 0 5px;
+      padding: 12px 35px;
+      outline: none;
+      color: navy;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.4;
+      text-align: center;
+      background: transparent;
+    }
+    /* ::placeholder{
+      font-size: 0.85rem;
+    } */
+    /* .footer_style{
+      background-color: #791b32 !important;
+    }
+    .footer_style p{
+      margin-bottom: 0 !important;
+    } */
+    #footer{
+      height: 12vh;
+      width: 100%;
+      background-color: #00A8FF !important;
+    }
+    #footer h4{
+      padding-top: 20px;
+      padding-left: 8px;
+      font-size: 20px;
+    }
+    #footer h4 i{
+      color: #fff;
+    }
+    #footer p{
+      color: #fff;
+      font-size: 15px;
+    }
+
+/* ///////////////////////////////////////////// TOP SCROLL //////////////////////////////// */
+
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 40px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: #00A8FF;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    #myBtn:hover {
+      background: #606060;
+    }
+
+
+/* ////////////////////////////////////////////////////// Media Queries /////////////////////////////////// */
+
+    @media(max-width: 768px){
+        .nav_style img{
+          height: auto;
+          width: 70px;
+        }
+        .nav_style a{
+          padding-left: 3px;
+        }
+        .nav-item{
+            text-align: center !important;
+        }
+        .main-header{
+            height: 1450px;
+            width: 100%;
+            position: relative;
+            color: white;
+            background-color: #04044c !important;
+            /* padding: 10% 10% 20% 5%; */
+            align-items: center;
+        }
+        .reg_card{
+          margin-top: 40px;
+          /* padding-top: 5px; */
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding-right: 3px;
+        }
+        .regi{
+          font-size: 30px;
+        }
+        .regi img{
+          height: 60px;
+          width: 60px;
+        }
+        div.section-header{
+          margin-top: 2px;
+          margin-bottom: 2px;
+          text-align: center;
+          justify-content: center;
+        }
+        .sub-section h1{
+          font-size: 35px;
+        }
+        .offers{
+            height: auto;
+            margin-top: 50px;
+        }
+        .second{
+            margin: 30px 0;
+        }
+        #footer{
+          height: 14vh;
+          width: 100%;
+          background-color: #00A8FF !important;
+        }
+        #footer h4{
+          padding-top: 20px;
+          padding-left: 8px;
+          font-size: 15px;
+        }
+        #footer p{
+          padding-top: 5px;
+          color: #fff;
+          font-size: 13px;
+          margin-bottom: 0 !important;
+        }
+        .offers:before{
+          content: "";
+          position: absolute;
+          top: 0%;
+          bottom: 0%;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          background: linear-gradient(360deg, #16c9f6 100%, #fff 0%);
+
+        }
+    }
+
+
+    </style>
+
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ STYLE ENDS $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark nav_style p-3">
+  <a class="navbar-brand pl-5" href="#"><img src="images/TLog .png" alt="TECH-VIE" width="100px" height="25px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto pr-5 text-capitalize">
+      <li class="nav-item">
+        <a class="nav-link active" href="#homeid" aria-controls="Home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#servicesid" aria-controls="Services">services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#offersid" aria-controls="offers">offers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contactid">contact</a>
+      </li>
+      
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </div>
+</nav>
+
+<div class="main-header bg-light" id="homeid">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7 pt-2">
+                <div>
+                    <h1 style="font-size: 30px;">Technology Networking</h1>
+                    <p style="font-size: 15px;">Platform Where Students Can Change The Revolution Of Technology</p>
+                    <div class="row">
+                        <div class="col-md-4 text-center pt-5">
+                            <img src="images/ideas.png" alt="" width="150px" height="150px">
+                            <p style="font-size: 16px; " class="pt-2">Get Ideas</p>
+                        </div>
+                        <div class="col-md-4 text-center pt-5">
+                            <img src="images/project.png" alt="" width="150px" height="150px">
+                            <p style="font-size: 16px; " class="pt-2">Make Projects</p>
+                        </div>
+                        <div class="col-md-4 text-center pt-5">
+                            <img src="images/world.png" alt="" width="150px" height="150px">
+                            <p style="font-size: 16px; " class="pt-2">Impact World</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div>
+                    <div class="row">
+                        <div class="col-md-8 reg_card mx-auto">
+                            <form action="" method="POST">
+                                <h1 class="mb-3 font-weight-normal regi"><b>Register<b> <img src="images/reg.png" alt="" height="70px" width="70px" class="pl-3"></h1>
+                                    <div class="card bg-light">
+                                        <div class = "form-group input-group">
+                                            <div clas = "input-group-prepand">
+                                                <span class ="input-group-text"> <i class = "fa fa-user"></i> </span>
+                                            </div>
+                                            <input type="text" name ="username" class ="form-control" placeholder ="full name" required>
+                                        </div>
+                        
+                                        <div class = "form-group input-group">
+                                            <div clas = "input-group-prepand">
+                                                <span class ="input-group-text"> <i class = "fa fa-envelope"></i> </span>
+                                            </div>
+                                            <input type="text" name ="email" class ="form-control" placeholder ="Email Address" required>
+                                        </div>
+                        
+                                        <div class = "form-group input-group">
+                                            <div clas = "input-group-prepand">
+                                                <span class ="input-group-text"> <i class = "fa fa-phone"></i> </span>
+                                            </div>
+                                            <input type="number" name ="mobile" class ="form-control" placeholder ="Phone Number" required>
+                                        </div>
+                        
+                                        <div class = "form-group input-group">
+                                            <div clas = "input-group-prepand">
+                                                <span class ="input-group-text"> <i class = "fa fa-lock"></i> </span>
+                                            </div>
+                                            <input type="password" name ="password" class ="form-control" placeholder ="Create Your Password" value ="" required>
+                                        </div>
+                        
+                                        <div class = "form-group input-group">
+                                            <div clas = "input-group-prepand">
+                                                <span class ="input-group-text"> <i class = "fa fa-lock"></i> </span>
+                                            </div>
+                                            <input type="password" name ="cpassword" class ="form-control" placeholder ="Repeate Password" value ="" required>
+                                        </div>
+                        
+                                        <div class = "form-group">
+                                            <button type = "submit" name = "submit" class ="btn btn-primary btn-block"> Create Account </button>
+                                        </div>
+                        
+                                        <p class = "text-center" > <span style="color: #6610f2;">Have An Account?</span> <a href="">Log In</a> </p>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& SERVICES &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+
+<section>
+    <div class = "container-fluid sub-section pt-5 pb-5 " id = "servicesid">
+      <div class = "section-header text-center mb-1 mt-1">
+        <h1>Services</h1>
+      </div>
+      
+      <div class ="row pt-5 ">
+        <div class = "col-lg-5 col-md-6 col-sm-6 col-12 ">
+          <img src="images/animated-gif-icon-9.jpg" alt="make-projects" class ="img-fluid">
+        </div>
+        
+        <div class ="col-lg-6 col-md-6 col-sm-6 col-12 pt-5  " word-wrap= "wrap";>
+          <h2>Make Projects Online</h2>
+          <p class="pt-2">Students can Upload their Projects Online in this site to get their Work done and become more Creative in Technology World </p>
+          <p>Students wish to do projects, without support no one can able to identify and work on that projects here we are providing a scope for students to utilize their skill and we connect to industry experts for their projects on which students are looking for help.</p>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <div class = "container-fluid sub-section_1 pt-2 pb-5" >
+      
+      <div class ="row pt-5">
+  
+        <div class ="col-lg-6 col-md-6 col-sm-6 col-12 pt-2" word-wrap= "wrap";>
+          <h2> Become Expert</h2>
+          <p class="pt-2">Students can become Expert in this site by his advanced skills on projects to meet present Technology. </p>
+          <p>Expert or peers who are supposed in the It sector or in any of the organization may be available for support. As a graduated and employed person no one hasitates to help students and students should be eager to learn new technology and implementation in their projects.</p>
+          <p>Here in this platform experts makes students to get trained as to improve students behavioural and skill set to build thier project as company format.</p>
+        </div>
+  
+        <div class = "col-lg-5 col-md-5 col-sm-5 col-12 pt-2 ">
+          <img src="images/stud1.49a48c71.gif" alt="Become Expert" class ="img-fluid">
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <div class = "container-fluid sub-section_2 pt-2 pb-5">
+      
+      <div class ="row pt-5">
+  
+        <div class = "col-lg-5 col-md-5 col-sm-5 col-12 ">
+          <img src="images/stud2.92515706.gif" alt="Build your Team" class ="img-fluid">
+        </div>
+        
+        <div class ="col-lg-6 col-md-6 col-sm-6 col-12 pt-5" word-wrap= "wrap";>
+          <h2> Build your Team </h2>
+          <p class="pt-2"> Start where you are.Use what you have.Do what you can. </p>
+          <p>Teamwork is the ability to work together toward a common vision. The ability to direct individual accomplishments toward organizational objectives. It is the fuel that allows common people to attain uncommon results will be quickly just because the vision, harmony, consistent production, and success of the team is more important.</p>
+          <p>Talent wins games, but teamwork and intelligence win championships.teamwork begins by building trust. And the only way to do that is to overcome our need for invulnerability</p>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+</section>
+
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OFFERS $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+
+<section class="offers" id="offersid">
+    <div class="container headings text-center">
+        <h2 class="text-center font-weight-bold text-white">Offers</h2>
+    </div>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                <div class="card text-center">
+                    <div class="card-header pb-5"><img src="images/offer-1.jpg" alt="" width="100%" height="100%" class="img-fluid"></div>
+                    <div class="card-body sec-offer">
+                        <li>We Encourage Creativity</li>
+                        <li>Respect Their Ideas</li>
+                        <li>Innovation and Thinking Ability</li>
+                        <li>Friendly Environment</li>
+                        <li>Support Improve Skills</li>
+                        <li>One-to-One sharing</li>
+                        <li>Provide Chance to Develope Own Identity</li>
+                    </div>
+                    <div class="card-footer">
+                        <a href="">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                <div class="card text-center second">
+                    <div class="card-header"><img src="images/offer.png" alt="" width="100%" height="100%" class="img-fluid"></div>
+                    <div class="card-body sec-offer">
+                        <li>We Provide An Option To Connect Experts</li>
+                        <li>Project Developing</li>
+                        <li>In Detailed Project Maintanance</li>
+                        <li>Platform For Exposing Ideas or Projects</li>
+                        <li>We Provide Suggestions For Your Projects</li>
+                        <li>Option To Create Your Community</li>
+                    </div>
+                    <div class="card-footer">
+                        <a href="">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                <div class="card text-center">
+                    <div class="card-header pb-5"><img src="images/prf2.png" alt="" width="100%" height="100%" class="img-fluid"></div>
+                    <div class="card-body sec-offer">
+                        <li>Company Environmental Projects</li>
+                        <li>Discussion Forum's</li>
+                        <li>Create Your Own Group For Developement</li>
+                        <li>You can Promote Your Project As Company Aspects</li>
+                        <li>Team Work</li>
+                        <li>Visualizing New Ideas For Future Experience</li>
+                        <li>Personal And Community Developement</li>
+                    </div>
+                    <div class="card-footer">
+                        <a href="">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ///////////////////////////////////////////////////////// CONTACT us ////////////////////////////////////////// -->
+
+  <div class ="container-fluid pt-5 pb-5" id ="contactid">
+    <div class ="section_header text-center mb-5 mt-4">
+      <h1>CONTACT US</h1>
+      <p class="text-capitalize pt-1">We're Here to help and answer any question you might have. We look forward to here you 😃</p>
+    </div>
+  
+    <div class = "container">
+      <div class ="row">
+        <div class ="col-lg-8 offset-lg-2 col-12">
+        <form action ="" method ="POST">
+  
+         <div class="form-group">
+           <label >Name</label>
+          <input type="text" class="form-control" name ="username" placeholder="Enter your name" autocomplete ="off">
+          </div>
+  
+          <div class="form-group">
+            <label >Email</label>
+            <input type="email" class="form-control" name ="email" placeholder="Enter your email"required autocomplete ="off">
+          </div>
+  
+          <div class="form-group">
+           <label >Mobile</label>
+          <input type="number" class="form-control" name ="mobile" placeholder="Mobile number" autocomplete ="off" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Message</label>
+            <textarea class="form-control" name ="message" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your message..."></textarea>
+          </div>
+          <div class="d-flex justify-content-center form-button">
+            <button type="submit" class="btn btn-primary" name = "submit_1">Submit</button>
+          </div>
+          
+        </form>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+<!-- ///////////////////////////////////// top cursor ////////////////////////////////////////////// -->
+
+<div class = "container scrolltop float-right pr-5">
+  <i class = "fa fa-arrow-up" onclick = "topFunction()" id ="myBtn"> </i>
+</div>
+
+<!-- ///////////////////////////////////////////////////// footer ////////////////////////////////////// -->
+
+<footer class="mt-3 d-block" id="footer">
+  <div>
+    <h4>Follow Us :
+      <i class="fab fa-facebook pl-1"></i>
+      <i class="fab fa-instagram pl-1"></i>
+      <i class="fab fa-twitter pl-1"></i>
+      <i class="fab fa-linkedin pl-1"></i>
+      <i class="fab fa-github pl-1"></i>
+    </h4>
+  </div>
+  <div class="text-center text-capitalize">
+    <p>Copyrights TECH-VIE @2020</p>
+  </div>
+</footer>
+
+
+<!-- ????????????????????????????????????????????????????????? TOP cursor FUNCTIONALITY ?????????????????????????????? -->
+
+<script type = "text/javascript">
+
+  mybutton = document.getElementById("myBtn");
+
+  window.onscroll = function() {scrollFunction()};
+  function scrollFunction(){
+    if (document.body.scrollTop >100 || document.documentElement.scrollTop > 100) {
+      mybutton.style.display = "block";
+
+    }else {
+      mybutton.style.display ="none";
+    }
+  }
+
+function topFunction(){
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+</script>
+
+
+<!-- ///////////////////////////////////////////////////// SMOOTH scroll ///////////////////////////////////////// -->
+
+<!-- 
+<script>
+   var scroll = new SmoothScroll('a[href*="#"]',{
+            speed:1000,
+            speedAsDuration: true
+        });
+</script> -->
+
+
+</body>
+</html>
